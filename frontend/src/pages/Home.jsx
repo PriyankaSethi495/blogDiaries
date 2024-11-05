@@ -13,7 +13,7 @@ const Home = () => {
     
     useEffect(() => {
       setLoading(true);
-      fetch('http://localhost:5555/books')
+      fetch('https://blogdiaries-backend-1.onrender.com/books')
         .then((response) => {
           if (!response.ok) {
             throw new Error(`HTTP error! Status: ${response.status}`);

@@ -12,7 +12,7 @@ const DeleteBook = () => {
   const { enqueueSnackbar} = useSnackbar();
   const handleDeleteBook = () => {
     setLoading(true);
-    axios.delete(`http://localhost:5555/books/${id}`)
+    axios.delete(`https://blogdiaries-backend-1.onrender.com/books/${id}`)
     .then(()=>{
       setLoading(false);
       enqueueSnackbar('Book Deleted Successfully', {variant: 'success'});

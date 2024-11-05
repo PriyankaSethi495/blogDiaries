@@ -37,7 +37,7 @@ const CreateBook = () => {
     }
 
     setLoading(true);
-    axios.post('http://localhost:5555/books', data, {
+    axios.post('https://blogdiaries-backend-1.onrender.com/books', data, {
       headers: {
         'Content-Type': 'multipart/form-data'
       }
