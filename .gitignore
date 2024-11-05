@@ -1,6 +1,7 @@
 # Node modules
 node_modules/
+/frontend/node_modules/
 
 
-# Production
-.env
+# Ignore .env file in the backend folder
+/backend/.env
