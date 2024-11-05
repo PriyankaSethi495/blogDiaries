@@ -1,5 +1,6 @@
 # blogDiaries
-**Note**: This project is currently under development. Expect frequent updates and changes.
+**Note**: This project is already deployed using Render and can be accessed at https://blogdiaries-frontend.onrender.com/
+
 # Project Description
 This project is a simple MERN Stack application that allows users to create, view, update, and delete stories about their travel experiences around the world. Based on the Book-Store-MERN-Stack project (https://github.com/mohammad-taheri1/Book-Store-MERN-Stack), it is currently being adapted to function as a user-generated blog where each post contains a short story, location details, and optional images.
 
