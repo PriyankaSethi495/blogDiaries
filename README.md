@@ -1,13 +1,17 @@
 # blogDiaries
+**Note**: This project is currently under development. Expect frequent updates and changes.
 # Project Description
-This project is a MERN Stack application that allows users to create, view, update, and delete stories about their travel experiences around the world. Based on the Book-Store-MERN-Stack project (https://github.com/mohammad-taheri1/Book-Store-MERN-Stack), it has been adapted to function as a user-generated blog where each post contains a short story, location details, and optional images.
+This project is a simple MERN Stack application that allows users to create, view, update, and delete stories about their travel experiences around the world. Based on the Book-Store-MERN-Stack project (https://github.com/mohammad-taheri1/Book-Store-MERN-Stack), it is currently being adapted to function as a user-generated blog where each post contains a short story, location details, and optional images.
 
-# Features
+# Features that will be implemented
 User-Created Stories: Users can add new stories, sharing their experiences at specific locations.
+
 Image Upload: Users can upload images for each story, with image storage and management handled by Cloudinary.
 
 CRUD Functionality: Full Create, Read, Update, and Delete capabilities for stories.
+
 Responsive Design: Ensures usability across devices.
+
 # Tech Stack
 Frontend: React, React Router, CSS (Tailwind)
 
