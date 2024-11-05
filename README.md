@@ -5,9 +5,12 @@ This project is a MERN Stack application that allows users to create, view, upda
 # Features
 User-Created Stories: Users can add new stories, sharing their experiences at specific locations.
 Image Upload: Users can upload images for each story, with image storage and management handled by Cloudinary.
+
 CRUD Functionality: Full Create, Read, Update, and Delete capabilities for stories.
 Responsive Design: Ensures usability across devices.
 # Tech Stack
-Frontend: React, React Router, CSS
+Frontend: React, React Router, CSS (Tailwind)
+
 Backend: Node.js, Express.js, MongoDB for data storage, and Cloudinary for image management
+
 Database: MongoDB, using Mongoose for schema modeling
