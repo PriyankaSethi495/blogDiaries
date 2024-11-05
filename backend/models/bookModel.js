@@ -2,7 +2,7 @@ import mongoose from "mongoose";
 
 const bookSchema = mongoose.Schema(
     {
-        title: {
+        country: {
             type: String,
             required: true,
         },
@@ -16,7 +16,7 @@ const bookSchema = mongoose.Schema(
         },
         content: {
             type: String,
-            required: true,
+            required: false,
         },
         imageUrl: {
             type: String,  // Store the URL of the image
@@ -28,4 +28,4 @@ const bookSchema = mongoose.Schema(
     }
 )
 
-export const Book = mongoose.model('Cat', bookSchema);
+export const Book = mongoose.model('Cats', bookSchema);

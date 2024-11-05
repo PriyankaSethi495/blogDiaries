@@ -10,9 +10,9 @@ const BooksTable = ({books}) => {
     <thead>
       <tr>
       <th className='border border-slate-600 rounded-md text-white'>No</th>
-      <th className='border border-slate-600 rounded-md text-white'>Title</th>
+      <th className='border border-slate-600 rounded-md text-white'>Country</th>
       <th className='border border-slate-600 rounded-md max-md:hidden text-white'>Author</th>
-      <th className='border border-slate-600 rounded-md max-md:hidden text-white'>Publish Year</th>
+      <th className='border border-slate-600 rounded-md max-md:hidden text-white'>Year of Visit</th>
       <th className='border border-slate-600 rounded-md text-white'>Operations</th>
       </tr>
     </thead>
@@ -24,7 +24,7 @@ const BooksTable = ({books}) => {
               {index+1}
             </td>
             <td className='border border-slate-700 tounded-md text-center text-white'>
-              {book.title}
+              {book.country}
             </td>
             <td className='border border-slate-700 tounded-md text-center max-md:hidden text-white'>
               {book.author}

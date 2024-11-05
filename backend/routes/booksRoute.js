@@ -9,10 +9,10 @@ import multer from 'multer';
     // Save a new book
     router.post('/', upload.single('image'), async (request, response) => {
         try {
-            const { title, author, publishYear, content } = request.body;
+            const { country, author, publishYear, content } = request.body;
             
             // Check for required fields
-            if (!title || !author || !publishYear || !content) {
+            if (!country || !author || !publishYear) {
                 return response.status(400).send({ message: "Send all required fields" });
             }
     
@@ -26,7 +26,7 @@ import multer from 'multer';
     
             // Create a new book entry with image URL if available
             const newBook = await Book.create({
-                title,
+                country,
                 author,
                 publishYear,
                 content,
@@ -71,31 +71,42 @@ import multer from 'multer';
         }
     })
 
-    //Update book
-    router.put('/:id', async(request, response)=>{
-        try {
-            if (
-                !request.body.title ||
-                !request.body.author ||
-                !request.body.publishYear ||
-                !request.body.content
-            ) {
-                return response.status(400).send({message: "Send all required fields"})
-            }
+    // Update book including image upload
+router.put('/:id', upload.single('image'), async (request, response) => {
+    try {
+        const { id } = request.params;
 
-            const {id} = request.params;
-
-            const result = await Book.findByIdAndUpdate(id, request.body); 
-            if (!result) {
-                return response.status(404).json({message: "Book not found"});
-            }
-            return response.status(200).json({message: "Book updated successfully"});
-
-        } catch(error) {
-            console.log(error.message);
-            response.status(500).send({message: error.message});
+        // Find the existing book
+        const book = await Book.findById(id);
+        if (!book) {
+            return response.status(404).json({ message: "Book not found" });
         }
-    })
+
+        const { country, author, publishYear, content } = request.body;
+        let imageUrl = book.imageUrl; // Default to existing imageUrl
+
+        // Update image if a new file is uploaded
+        if (request.file) {
+            const result = await cloudinary.uploader.upload(request.file.path);
+            imageUrl = result.secure_url; // Cloudinary's URL for the uploaded image
+        }
+
+        // Update the book document with new or existing data
+        book.country = country || book.country;
+        book.author = author || book.author;
+        book.publishYear = publishYear || book.publishYear;
+        book.content = content || book.content;
+        book.imageUrl = imageUrl;
+
+        // Save the updated book
+        await book.save();
+
+        return response.status(200).json({ message: "Book updated successfully", data: book });
+    } catch (error) {
+        console.log(error.message);
+        response.status(500).send({ message: error.message });
+    }
+});
 
     //Delete a book 
     router.delete('/:id', async(request, response)=>{

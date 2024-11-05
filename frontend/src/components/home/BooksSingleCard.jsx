@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
-import {PiBookOpenTextLight} from 'react-icons/pi';
+import { MdLocationOn } from 'react-icons/md';
 import {BiUserCircle, BiShow} from 'react-icons/bi';
 import {AiOutlineEdit} from 'react-icons/ai'
 import {BsInfoCircle} from 'react-icons/bs'
@@ -23,14 +23,14 @@ const BooksSingleCard = ({book}) => {
                         {book.imageUrl && (
                 <img
                     src={book.imageUrl}
-                    alt={`${book.title} cover`}
+                    alt={`${book.country} cover`}
                     className="w-full h-40 object-cover rounded-lg mb-2"
                 />
             )}
 
             <div className='flex justify-start items-center gap-x-2'>
-              <PiBookOpenTextLight className='text-red-300 text-2xl'/>
-              <h2 className='my-1 text-white'>{book.title}</h2>
+              <MdLocationOn className='text-red-300 text-2xl'/>
+              <h2 className='my-1 text-white'>{book.country}</h2>
               </div>
               <div className='flex justify-start items-center gap-x-2'>
                 <BiUserCircle className='text-red-300 text-2xl'/>
