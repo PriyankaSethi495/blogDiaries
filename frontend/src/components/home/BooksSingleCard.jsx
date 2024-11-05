@@ -38,9 +38,9 @@ const BooksSingleCard = ({book}) => {
             </div>
             <div className='flex justify-between items-center gap-x-2 mt-4 p-4'>
               <BiShow className='text-3xl text-blue-300 hover:text-white cursor-pointer' onClick={()=>setShowModal(true)}/>
-              <Link to={`/books/details/${book._id}`}>
+              {/* <Link to={`/books/details/${book._id}`}>
                   <BsInfoCircle className='text-2xl text-green-800 hover:text-white'></BsInfoCircle>
-                </Link>
+                </Link> */}
                 <Link to={`/books/edit/${book._id}`}>
                   <AiOutlineEdit className='text-2xl text-yellow-800 hover:text-white'></AiOutlineEdit>
                 </Link>
